@@ -1,0 +1,20 @@
+name: My First GitHub Actions Workflow
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  sample-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: echo "Hello World from GitHub Actions"
+      - name: Check current directory
+        run: pwd
+      - name: Check operating system
+        run: uname -a
+      - name: Run sample test
+        run: |
+          echo "Running sample test"
+          test $((2 + 2)) -eq 4
+          echo "Test passed successfully"
